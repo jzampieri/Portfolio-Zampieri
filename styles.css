@@ -2,13 +2,21 @@ body{
     background-color: #ebedf0;
     font-family: LabilGrotesk,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif; 
     /* ESCOLHENDO UMA FONTE PARA O SITE */
+    /* ESCONDENDO A BARRA HORIZONTAL DA PAGINA */
     overflow-x: hidden;
 }
-    
+
+/* DEIXANDO SUAVE O ROLAMENTO DA BARRA LATERAL DO MENU */
 html{
     scroll-behavior: smooth;
 }
-    
+
+/* CONTAINER PRINCIPAL ( PAI ) */
+.container{
+    width: 100%;
+    height: 90vmin;
+}
+
 .header-page{
     width: 100%;
     height: 11%;
@@ -129,11 +137,29 @@ html{
     }
     
 }
+
+#detalhes {
+    width: 50%;
+    position: relative;
+    left: 150%;
+    top: -69%;
+}
+
+#detalhes img {
+    position: relative;
+    left: -4%;
+}
+
+#detalhes a{
+    text-decoration: none;
+    display: block;
+    color: #a594fd;
+}
     
 #sobre {
-    margin-top: 270px;
+    margin-top: 200px;
     margin-left: 150px;
-    width: 50%;
+    width: 40%;
     position: relative;
     align-items: center;
     flex-direction: column;
@@ -150,9 +176,14 @@ html{
 #sobre h3{
     font-size: 30px;
 }
+
+#sobre h4{
+    color: #aaaaaa;
+    font-size: 17px;
+}
     
 #sobre i{
-    font-size: 30px;
+    font-size: 40px;
     color: #000000;
     transition: 500ms;
     margin: 2%;
@@ -167,17 +198,7 @@ html{
 #sobre a{
     text-decoration: none;
 }
-    
-    
-container h1{
-    visibility: hidden;
-}
-    
-    
-.container{
-    width: 100%;
-    height: 90vmin;
-}
+
     
 .container-card {
     width: 100%;
@@ -191,7 +212,7 @@ container h1{
 }
     
 .card-item {
-    width: 60%;
+    width: 40%;
     height: 60vmin;  
     text-align: center;
     display: flex;
@@ -199,9 +220,8 @@ container h1{
     align-items: center;
     justify-content: center;
     gap: 30px;
-    border-radius: 1.25rem;
     box-sizing: border-box;
-    background-color: rgba(216, 216, 216, 0.87);
+    background-color: rgba(216, 216, 216, 0.795);
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -238,13 +258,14 @@ container h1{
     opacity: 1;
 }
 
+/* EFEITO DE APARIÇÃO DOS CONTEUDOS */
 [data-anime]{
     opacity: 0;
-    transition: .3s;
+    transition: .8s;
 }
 
 [data-anime="top"] {
-    transform: translate3d( 0, -50px, 0);
+    transform: translate3d( 0, -500px, 0);
 }
 
 [data-anime].animate {
