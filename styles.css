@@ -131,7 +131,7 @@ html{
 }
     
 #sobre {
-    margin-top: 200px;
+    margin-top: 270px;
     margin-left: 150px;
     width: 50%;
     position: relative;
@@ -229,11 +229,25 @@ container h1{
     top: 80%;
     opacity: 0;
     background: linear-gradient(0deg, rgba(59, 56, 65, 0) 22.4%, #a594fd 60.94%, rgba(59, 56, 65, 0));
-    transition: top .8s ease-out, opacity .4s linear;
+    transition: top .6s ease-out, opacity .4s linear;
     will-change: transform, opacity;
 }
     
 .card-item:hover:before {
     top: 20%;
     opacity: 1;
+}
+
+[data-anime]{
+    opacity: 0;
+    transition: .3s;
+}
+
+[data-anime="top"] {
+    transform: translate3d( 0, -50px, 0);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
 }

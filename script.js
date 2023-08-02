@@ -13,9 +13,24 @@ btnMobile.addEventListener('touchstart', toggleMenu);
 
 // Animações no scroll da pagina
 
-window.sr = ScrollReveal({ reset: true});
+const target = document.querySelectorAll('[data-anime]');
+const animationClass = 'animate' ;
 
-sr.reveal('.container', {
-        rotate: {x: 0, y: 90, z: 0},        
-        duration: 3000
-});
+function animeScroll() {
+        const windowTop = window.pageYOffset + ((window.innerHeight * 3 ) / 4);
+        target.forEach(function(element){
+                if((windowTop) > element.offsetTop) {
+                        element.classList.add(animationClass);
+                } else {
+                        element.classList.remove(animationClass);
+                }             
+        })
+}
+
+animeScroll();
+
+if(target.length) {
+        window.addEventListener('scroll', deobunce(function(){
+                animeScroll();
+        }, 100 ));
+}
