@@ -1,0 +1,239 @@
+body{
+    background-color: #ebedf0;
+    font-family: LabilGrotesk,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif; 
+    /* ESCOLHENDO UMA FONTE PARA O SITE */
+    overflow-x: hidden;
+}
+    
+html{
+    scroll-behavior: smooth;
+}
+    
+.header-page{
+    width: 100%;
+    height: 11%;
+    display: flex;
+    background-color: rgb(245, 245, 245);
+    align-items: center;
+    position: fixed;
+    justify-content: space-between; 
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: .5rem;
+    box-sizing: border-box;
+}
+    
+    
+@font-face {
+    font-family: 'DESIGNER';
+    src: url('./font/designer/DESIGNER.otf') format(opentype) ;
+}
+    
+.header-page h1 {
+    color: rgb(127, 101, 255);
+    font-family: DESIGNER;
+    display: flex;
+    letter-spacing: 6px;
+    font-size:xxx-large;
+}
+    
+.header-page a{
+    text-decoration: none;
+    color: #8c75ff;
+    display: block;
+}
+    
+#menu {
+    display: flex;
+    list-style: none;
+    gap: .5rem;
+}
+    
+#menu a{
+    display: block;
+    padding: .5rem;
+}
+    
+#btn-mobile{
+    display: none;
+}
+    
+/* criando uma responsive para o menu */
+    
+@media (max-width: 600px){
+    
+    #btn-mobile{
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+    
+    #menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 80px;
+        right: 0px;
+        background-color: #ebedf0;
+        height: 0px;
+        transition: 600ms;
+        z-index: 1000;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    
+    #nav.active #menu{
+        height: calc(100vh - 70px);
+        visibility: visible;
+    }
+    
+    #menu a{
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba( 0, 0, 0, .05);
+    }
+    
+    #hamburguer{
+        width: 20px;
+        border-top: 2px solid;
+    }
+    
+    #hamburguer::after, #hamburguer::before{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+    
+    #nav.active #hamburguer{
+        border-top-color: transparent
+    }
+    
+    #nav.active #hamburguer::before{
+        transform: rotate(135deg);
+    }
+    
+    #nav.active #hamburguer::after{
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+    
+}
+    
+#sobre {
+    margin-top: 200px;
+    margin-left: 150px;
+    width: 50%;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+    
+#sobre h1{
+    color: #8c75ff;
+    font-family: DESIGNER;
+    font-size: 80px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);;
+}
+    
+#sobre h3{
+    font-size: 30px;
+}
+    
+#sobre i{
+    font-size: 30px;
+    color: #000000;
+    transition: 500ms;
+    margin: 2%;
+}
+    
+#sobre i:hover{
+    color: #8c75ff;
+    transform: translateY(-8px);
+        
+}
+    
+#sobre a{
+    text-decoration: none;
+}
+    
+    
+container h1{
+    visibility: hidden;
+}
+    
+    
+.container{
+    width: 100%;
+    height: 90vmin;
+}
+    
+.container-card {
+    width: 100%;
+    min-height: 80vh;
+    color: #FFF;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    row-gap: 20px;
+}
+    
+.card-item {
+    width: 60%;
+    height: 60vmin;  
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    border-radius: 1.25rem;
+    box-sizing: border-box;
+    background-color: rgba(216, 216, 216, 0.87);
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+    
+ .card-item h4{
+    color: rgb(165 148 253);    
+}
+    
+.card-item p{
+    color: rgb(41, 40, 40);
+    margin: 1rem;
+}
+    
+.card-item h1{
+    color: black;
+}
+/* EFEITO PARA A SUBIDA DA BARRA LATERAL */
+    
+.card-item:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 196px;
+    left: 0;
+    top: 80%;
+    opacity: 0;
+    background: linear-gradient(0deg, rgba(59, 56, 65, 0) 22.4%, #a594fd 60.94%, rgba(59, 56, 65, 0));
+    transition: top .8s ease-out, opacity .4s linear;
+    will-change: transform, opacity;
+}
+    
+.card-item:hover:before {
+    top: 20%;
+    opacity: 1;
+}
